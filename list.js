@@ -1,7 +1,7 @@
 let linkedList = {
-  value: 1,
+  value: "a",
   pointer: {
-    value: 2,
+    value: "b",
     pointer: {
       value: 3,
       pointer: null,
@@ -32,6 +32,32 @@ let listToArray = function (list) {
   console.log(array);
 };
 
-arrayToList(arr);
+let prepend = function (element, list) {
+  return (list = { value: element, pointer: list });
+};
 
-listToArray(linkedList);
+let nth = function (list, n) {
+  let count = 1;
+  for (let node = list; node; node = node.pointer) {
+    if (count !== n) {
+      count++;
+    } else {
+      return node.value;
+    }
+  }
+};
+let recurseNth = function (list, n, count = 1) {
+  if (count === n) {
+    if (list != null) {
+      return list.value;
+    } else return undefined;
+  } else return recurseNth(list.pointer, n, count + 1);
+};
+
+// console.log(prepend(0, linkedList));
+
+// arrayToList(arr);
+
+console.log(nth(linkedList, 4));
+
+console.log(recurseNth(linkedList, 1));
