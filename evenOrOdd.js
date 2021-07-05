@@ -12,3 +12,5 @@ const isEven = (n) => {
 };
 
 console.log(isEven(23));
+
+module.exports = isEven;
