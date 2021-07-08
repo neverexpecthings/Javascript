@@ -8,7 +8,10 @@ let every = (arr, predicate) => {
   return true;
 };
 
-const arr = ["hello", "this", "isss", "test", "true"];
+let everySome = (arr, predicate) => {
+  let trueOrFalse = !arr.some((element) => !predicate(element));
+  return trueOrFalse;
+};
 
-console.log(every(arr, (n) => n.length > 3));
 module.exports = every;
+module.exports = everySome;
