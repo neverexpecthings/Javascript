@@ -33,9 +33,9 @@ const processData = (n, array) => {
     }
   };
 
-  return `Mean: ${mean(n, array)}\nMedia: ${median(array)}\nMode: ${mode(
-    array
-  )}`;
+  return console.log(
+    `Mean: ${mean(n, array)}\nMedia: ${median(array)}\nMode: ${mode(array)}`
+  );
 };
 
 module.exports = processData;
